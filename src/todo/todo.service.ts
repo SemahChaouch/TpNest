@@ -41,6 +41,7 @@ export class TodoService {
     async restoreTodo(id:number){
         return this.todoRepository.restore(id)
     }
+    
     async TodoNB(){
         const qb = this.todoRepository.createQueryBuilder('todo');
         qb.select("cv.status,count(cv.id)").groupBy("cv.status");
